@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slacker News</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <h2>Slacker News</h2>
+    <h3>Daily Articles</h3>
+
+      <% @articles.each do |article| %>
+        <h5> <%= "#{article[0].upcase}" %> </h5>
+          <p> <%= "#{article[1]} " %> </p>
+          <h6> <a href="<%= article[2] %>" target="_blank"> <%= article[2]%></a></h6>
+        <br>
+      <% end %>
+
+    <button type='submit'><a href="/articles/new">Submit New Article</a></button>
+
+  </body>
+</html>

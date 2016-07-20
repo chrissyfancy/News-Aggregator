@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <h2>Slacker News</h2>
+    <h3>Submit Your News Article</h3>
+
+    <form action="/articles/new" method="post">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" />
+    </div>
+    <div>
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url" />
+    </div>
+    <div>
+      <label for="description">Description: </label>
+      <input type="text" id="description" name="description" />
+    </div>
+    <div class="button">
+      <button type="submit">Submit Article</button>
+    </div>
+  </form>
+
+  <h5>
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+  </h5>
+
+  <a href="/articles">Go Back to Articles</a>
+
+  </body>
+</html>
